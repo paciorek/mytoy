@@ -19,6 +19,7 @@ jobs:
       run: |
         # There is a small bug here.
         pip install --user .
+        pip install pytest
 
     - name: Run tests
       run: |
