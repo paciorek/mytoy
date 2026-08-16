@@ -1,11 +1,11 @@
-on:          # When should the action be run?
+on:
   push:
     branches:
     - main
 
 jobs:
   CI:
-    runs-on: ubuntu-latest  # This refers to a Docker image.
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v7
 
@@ -16,10 +16,10 @@ jobs:
         python-version: 3.12
 
     - name: Install mytoy
-      run: |
+      run: |                          # Assume you are in the directory of the repository.
         # There is a small bug here.
+        cd mytoy
         pip install --user .
-        pip install pytest
 
     - name: Run tests
       run: |
